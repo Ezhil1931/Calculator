@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title> Calculator</title>
+<link rel="website icon" type="png" href="/imges/spider.jpg">
+</head>
+
+<body >
+    <div class="header"><h1 id="head">Calculator</h1></div>
+    <div class="container"> 
+    <input type="text" id="text">
+   
+<div class="number">
+
+<button onclick="display('1')">1</button>
+<button onclick="display('2')">2</button>
+<button onclick="display('3')">3</button>
+<button onclick="mini()">Del</button>
+<button onclick="display('4')">4</button>
+<button onclick="display('5')">5</button>
+<button onclick="display('6')">6</button>
+<button onclick="display('-')">-</button>
+<button onclick="display('7')">7</button>
+<button onclick="display('8')">8</button>
+<button onclick="display('9')">9</button>
+<button onclick="display('+')">+</button>
+<button onclick="display('0')">0</button>
+
+
+<button onclick="display('*')">*</button>
+<button onclick="display('/')">/</button>
+<button onclick="equal()" >=</button>
+<button id="del" onclick="del()">Clear</button>
+
+
+
+</div>
+</div>
+
+
+<!-- styling -->
+
+<style>
+.container{
+
+text-align:center;
+display: grid;
+justify-content: center;
+align-items: center;
+margin-top: 100px;
+gap:50px;
+}
+
+
+
+.number{
+
+background-color: rgba(10, 201, 26, 0.699);
+width: 500px;
+height: auto;
+
+display:grid;
+grid-template-columns:1fr 1fr 1fr 1fr;
+gap: 30px;
+text-align: center;
+padding: 10px;
+border-radius: 10px;
+}
+button{
+
+height: 50px;
+border: solid;
+border-radius: 10px;
+}
+input{
+height:50px;
+border-radius: 10px;
+font-size: 30px;
+display: flex;
+text-align: end;
+caret-color: red;
+border: 5px orange solid;
+
+}
+input:focus{
+outline:none;
+}
+
+#del{
+color: red;
+width:px;
+}
+#head{
+
+text-align: center;
+color:chartreuse;
+background-color: black;
+width: 200px;
+border-radius: 10px;
+margin-left: 450px;
+}
+
+
+</style>
+<!-- script  -->
+
+    <script>
+        let input = document.querySelector("#text");
+
+
+
+function display(data) {
+
+  input.value += data;
+
+}
+
+window.addEventListener('keydown',()=>{
+if(event.key=="Enter"){
+
+  equal();
+}
+})
+function equal() {
+  if (input.value == 9489020839) {
+
+alert("Hi Mr.Ezhil" )
+
+  }
+  else {
+
+    try {
+      input.value = eval(input.value);
+
+    }
+    catch (error) {
+
+      alert("Enter the correct value")
+    }
+  }
+}
+
+function del() {
+  input.value = "";
+}
+
+function mini() {
+
+  input.value = input.value.slice(0, -1);
+
+}
+    </script>
+
+</body>
+
+</html>
